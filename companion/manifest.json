@@ -5,7 +5,7 @@
 	"description": "Tesira TCP",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/gclsavtech/companion-module-biamp-tesiratcp.git",
+	"repository": "https://github.com/gclsavtech/companion-module-biamp-tesiratcp.git",
 	"bugs": "https://github.com/gclsavtech/companion-module-biamp-tesiratcp/issues",
 	"maintainers": [
 		{
