@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gclsavtech/companion-module-biamp-tesiratcp.git"
+		"url": "git+https://github.com/bitfocus/companion-module-base"
 	},
 	"license": "MIT",
 	"dependencies": {
