@@ -1,12 +1,6 @@
 # Generic TCP and UDP module
 
-A generic module for performing simple TCP and UDP requests
 
-If you are using this plugin, you are trying to control some device or software that is not directly supported yet, and we would therefore really appreciate if you made a module request for it here:
-
-<https://github.com/bitfocus/companion-module-requests/issues>
-
-Many more internal variables and feedbacks are possible specific modules and more people will get to benefit from these in the future, thanks.
 
 ## Configuration
 
