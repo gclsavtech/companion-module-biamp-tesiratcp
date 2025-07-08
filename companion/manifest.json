@@ -1,28 +1,16 @@
 {
-	"id": "generic-tcp-udp",
-	"name": "generic-tcp-udp",
-	"shortname": "tcp-udp",
-	"description": "Generic TCP and UDP",
+	"id": "biamp-tesiratcp",
+	"name": "biamp-tesiratcp",
+	"shortname": "tesiratcp",
+	"description": "Tesira TCP",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-generic-tcp-udp.git",
-	"bugs": "https://github.com/bitfocus/companion-module-generic-tcp-udp/issues",
+	"repository": "git+https://github.com/gclsavtech/companion-module-biamp-tesiratcp.git",
+	"bugs": "https://github.com/gclsavtech/companion-module-biamp-tesiratcp/issues",
 	"maintainers": [
 		{
-			"name": "Andreas H. Thomsen",
-			"email": "mc-hauge@hotmail.com"
-		},
-		{
-			"name": "Andrew Broughton",
-			"email": "andy@checkcheckonetwo.com"
-		},
-		{
-			"name": "John A Knight Jr",
-			"email": "istnv@ayesti.com"
-		},
-		{
-			"name": "Joseph Adams",
-			"email": "josephdadams@gmail.com"
+			"name": "Savannah Harvey",
+			"email": "gclsavtech@gmail.com"
 		}
 	],
 	"legacyIds": [],
@@ -33,6 +21,6 @@
 		"entrypoint": "../index.js"
 	},
 	"manufacturer": "Generic",
-	"products": ["TCP and UDP Requests"],
+	"products": ["Biamp Tesira"],
 	"keywords": ["Protocol", "Generic"]
 }

@@ -1,4 +1,4 @@
-import { InstanceBase, InstanceStatus, runEntrypoint, TCPHelper, UDPHelper } from '@companion-module/base'
+import { InstanceBase, InstanceStatus, runEntrypoint, TCPHelper, UDPHelper, TelnetHelper } from '@companion-module/base'
 import { ConfigFields } from './config.js'
 import { getActionDefinitions } from './actions.js'
 
@@ -22,9 +22,14 @@ class GenericTcpUdpInstance extends InstanceBase {
 			delete this.socket
 		}
 
-		this.config = config
+		this.config = config;
 
 		if (this.config.prot == 'tcp') {
+			
+			debug = console.log;
+			
+			log = console.log;
+			
 			this.init_tcp()
 
 			this.init_tcp_variables()
@@ -83,16 +88,21 @@ class GenericTcpUdpInstance extends InstanceBase {
 	}
 
 	init_tcp() {
+		const maxBufferLength = 2048 
+		let receivebuffer = []
+		
 		if (this.socket) {
 			this.socket.destroy()
 			delete this.socket
 		}
-
+		
 		this.updateStatus(InstanceStatus.Connecting)
-
+		
 		if (this.config.host) {
-			this.socket = new TCPHelper(this.config.host, this.config.port)
-
+			this.log("debug", "Connection to " + this.config.host + " port 23");
+			
+			this.socket = new TelnetHelper(this.config.host, 23);
+			
 			this.socket.on('status_change', (status, message) => {
 				this.updateStatus(status, message)
 			})
@@ -102,14 +112,14 @@ class GenericTcpUdpInstance extends InstanceBase {
 				this.log('error', 'Network error: ' + err.message)
 			})
 
-			this.socket.on('data', (data) => {
+			this.socket.on('data', (buffer) => {
 				if (this.config.saveresponse) {
-					let dataResponse = data
+					let dataResponse = buffer
 
 					if (this.config.convertresponse == 'string') {
-						dataResponse = data.toString()
+						dataResponse = buffer.toString()
 					} else if (this.config.convertresponse == 'hex') {
-						dataResponse = data.toString('hex')
+						dataResponse = buffer.toString('hex')
 					}
 
 					this.setVariableValues({ tcp_response: dataResponse })

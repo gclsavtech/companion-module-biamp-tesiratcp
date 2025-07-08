@@ -10,25 +10,7 @@ export const ConfigFields = [
 		label: 'Information',
 		width: 12,
 		value: `
-				<div class="alert alert-danger">
-					<h3>IMPORTANT MESSAGE</h3>
-					<div>
-						<strong>Please read and understand the following before using this module</strong>
-						<br>
-						The companion project is designed to make the everyday life of a technician easier.
-						We pefer to have ready made actions, presets and feedbacks for as many products as possible.<p>
-            This generic TCP/UDP module is intended for testing or small-scale products.
-						<ul>
-							<li>You shoudn't need to find, program and send raw TCP commands</li>
-							<li>If you have or use a product we don't support, please file a module request for it</li>
-							<li>Do you think your product/device is too insignificant to make a module for? It's probably not.</li>
-							<li>Properitary/inhouse products can also have their own modules.</li>
-							<li>With generic modules you won't get nice things like presets and feedback</li>
-						</ul>
-						<a href="https://github.com/bitfocus/companion-module-requests/issues" target="_new" class="btn btn-warning mr-1">See current requests</a>
-						<a href="https://github.com/bitfocus/companion-module-requests/issues/new" target="_new" class="btn btn-success">Request support for a product</a>
-					</div>
-				</div>
+
 			`,
 	},
 	{
@@ -43,7 +25,7 @@ export const ConfigFields = [
 		id: 'port',
 		label: 'Target Port',
 		width: 4,
-		default: 7000,
+		default: 23,
 		regex: Regex.PORT,
 	},
 	{
